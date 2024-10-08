@@ -1,0 +1,135 @@
+<!-- Skriven av Miranda Akrawi Engelbrektson-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Dostoyevsky - Basket</title>
+    <link rel="stylesheet" href="bs-styles.css">
+</head>
+<body>
+    <div class="container">
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="file:///C:/Users/23mirakr/Desktop/UX-UI/Codes/Homepage/Homepage.html">Home</a></li>
+                <li><a href="file:///C:/Users/23mirakr/Desktop/UX-UI/Codes/Homepage/Shop.html">Shop</a></li>
+                <li><a href="file:///C:/Users/23mirakr/Desktop/UX-UI/Codes/Homepage/main.html">About us</a></li>
+                <li><a href="file:///C:/Users/23mirakr/Desktop/UX-UI/Codes/Homepage/Basket.html" class="active">Basket</a></li>
+                <li><a href="file:///C:/Users/23mirakr/Desktop/UX-UI/Codes/Homepage/Caf%C3%A9Dostoyevsky-MyProfile.html">My profile</a></li>
+            </ul>
+        </nav>
+
+        <div>
+            <header>
+                <h1>~ Checkout ~</h1>
+            </header>
+            
+
+                <p id="cookies"></p>
+            <!-- Order Summary -->
+            <div class="order-summary">
+                <h2>Order summary</h2>
+                <p>Subtotal: <span id="subtotal">$0</span></p>
+                <p>Shipping: <span id="shipping">$10</span></p>
+                <p>Tax: <span id="tax">$0</span></p>
+                <h3>Total: <span id="total">$10</span></h3>
+                <button id="continuePayment">Continue to payment</button>
+            </div>
+
+            <!-- Products List -->
+            <div class="product-list" id="productList">
+                <!-- Items will be displayed here dynamically -->
+            </div>
+        </div>
+        <section class="fun-graphics">
+            <img src="https://i.pinimg.com/originals/07/4e/76/074e76185fc6a9aa251eb5ee9ce7c19e.jpg" alt="Fun Graphic" class="baby yoda">
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const shippingCost = 10; // Fixed shipping cost
+            const taxRate = 0.10; // Tax rate (10%)
+
+            // Retrieve basket from localStorage
+            let basket = JSON.parse(localStorage.getItem('basket')) || [];
+
+            // Function to display items in the basket
+            function displayBasket() {
+                const productList = document.getElementById("productList");
+                productList.innerHTML = ''; // Clear current list
+
+                if (basket.length === 0) {
+                    productList.innerHTML = "<p>Your basket is empty. Please add items from the shop.</p>";
+                    return; // No need to calculate totals if the basket is empty
+                }
+
+                let subtotal = 0;
+
+                basket.forEach(item => {
+                    let itemTotal = item.price * item.quantity;
+                    subtotal += itemTotal;
+
+                    // Create a div for each product and display the name, price, and quantity
+                    const productElement = document.createElement('div');
+                    productElement.classList.add('product');
+                    productElement.innerHTML = `
+                        <p><strong>${item.name}</strong>: $${item.price.toFixed(2)} x ${item.quantity} = $${itemTotal.toFixed(2)}</p>
+                        <label for="qty-${item.name}">Qty:</label>
+                        <input type="number" id="qty-${item.name}" value="${item.quantity}" min="0" data-name="${item.name}" data-price="${item.price}">
+                    `;
+
+                    // Append each product to the product list
+                    productList.appendChild(productElement);
+                });
+
+                // Calculate tax and total
+                const tax = subtotal * taxRate;
+                const total = subtotal + tax + shippingCost;
+
+                // Update the summary totals in the DOM
+                document.getElementById("subtotal").innerText = `$${subtotal.toFixed(2)}`;
+                document.getElementById("tax").innerText = `$${tax.toFixed(2)}`;
+                document.getElementById("total").innerText = `$${total.toFixed(2)}`;
+
+                // Attach event listeners to quantity inputs for updating the basket
+                attachQuantityListeners();
+            }
+
+            // Function to update the basket when quantity changes
+            function attachQuantityListeners() {
+                const quantityInputs = document.querySelectorAll(".product-list input[type='number']");
+                quantityInputs.forEach(input => {
+                    input.addEventListener('input', function() {
+                        const itemName = this.getAttribute('data-name');
+                        const newQuantity = parseInt(this.value);
+
+                        // Update the basket with the new quantity
+                        basket = basket.map(item => {
+                            if (item.name === itemName) {
+                                item.quantity = newQuantity;
+                            }
+                            return item;
+                        });
+
+                        // Remove items with quantity 0
+                        basket = basket.filter(item => item.quantity > 0);
+
+                        // Save the updated basket to localStorage
+                        localStorage.setItem('basket', JSON.stringify(basket));
+
+                        // Recalculate totals and update display
+                        displayBasket();
+                    });
+                });
+            }
+
+            // Initially display the basket when the page loads
+            displayBasket();
+        });
+
+
+    </script>
+
+</body>
+</html>

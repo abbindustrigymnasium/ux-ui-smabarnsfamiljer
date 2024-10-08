@@ -1,0 +1,169 @@
+<!-- Skriven av Miranda Akrawi Engelbrektson-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Dostoyevsky - Shop</title>
+    <link rel="stylesheet" href="sh-styles.css">
+    <script src="https://unpkg.com/petite-vue" defer init></script>
+</head>
+<body onload="getCookies()">
+    <div class="container">
+        <nav class="navbar">
+            <ul>
+                <li><a href="file:///C:/Users/23mirakr/Desktop/UX-UI/Codes/Homepage/Homepage.html">Home</a></li>
+                <li><a href="file:///C:/Users/23mirakr/Desktop/UX-UI/Codes/Homepage/Shop.html" class="active">Shop</a></li>
+                <li><a href="file:///C:/Users/23mirakr/Desktop/UX-UI/Codes/Homepage/main.html">About us</a></li>
+                <li><a href="file:///C:/Users/23mirakr/Desktop/UX-UI/Codes/Homepage/Basket.html">Basket</a></li>
+                <li><a href="file:///C:/Users/23mirakr/Desktop/UX-UI/Codes/Homepage/Caf%C3%A9Dostoyevsky-MyProfile.html">My profile</a></li>
+            </ul>
+        </nav>
+
+        <header>
+            <h4>Welcome to our menu!</h4>
+        </header>
+
+        <header>
+            <h1>~ Popular Choices ~</h1>
+        </header>
+
+        <header>
+            <h5>Click any product for more info!</h5>
+        </header>
+
+        <!-- Menu -->
+        <div class="popular-choices">
+            <div class="item">
+                <img src="https://i.imgur.com/JY3IRIh.jpeg" alt="Creme Brulee" class="menu-image" onclick="openOrderModal('Créme Brulée')">
+                <h3 onclick="openOrderModal('Créme Brulée')">Créme Brulée</h3>
+                <p>A sweet vanilla pudding with crunchy sugar on top.</p>
+            </div>
+            <div class="item">
+                <img src="https://i.imgur.com/js2eCMr.jpeg" alt="Spiderman Ice-pop" class="menu-image" onclick="openOrderModal('Spiderman ice-pop')">
+                <h3 onclick="openOrderModal('Spiderman ice-pop')">Spiderman ice-pop</h3>
+                <p>Superhero ice cream with the taste of adventure melting in your mouth.</p>
+            </div>
+            <div class="item">
+                <img src="https://i.imgur.com/UZUBZOu.jpeg" alt="Croissant" class="menu-image" onclick="openOrderModal('Croissant')">
+                <h3 onclick="openOrderModal('Croissant')">Croissant</h3>
+                <p>A golden, fluffy crescent moon filled with butter and dreams!</p>
+            </div>
+            
+            <header>
+                <h1>~ Doughnuts ~</h1>
+            </header>
+    
+            <div class="doughnuts1">
+                <div class="item">
+                    <img src="https://i.imgur.com/lCLiCGe.jpeg" alt="image" class="menu-image" onclick="openOrderModal('Cocoa Party')">
+                    <h3 onclick="openOrderModal('Cocoa Party')">Cocoa Party</h3>
+                </div>
+                <div class="item">
+                    <img src="https://i.imgur.com/geIcrme.jpeg" alt="image" class="menu-image" onclick="openOrderModal('Strawberry Dreams')">
+                    <h3 onclick="openOrderModal('Strawberry Dreams')">Strawberry Dream</h3>
+                </div>
+                <div class="item">
+                    <img src="https://i.imgur.com/fUjCwhx.jpeg" alt="image" class="menu-image" onclick="openOrderModal('Cocoa Sparkles')">
+                    <h3 onclick="openOrderModal('Cocoa Sparkles')">Cocoa Sparkles</h3>
+                </div>
+            </div>
+    
+            <div class="doughnuts2">
+                <div class="item">
+                    <img src="https://i.imgur.com/e0ds7ky.jpeg" alt="image" class="menu-image" onclick="openOrderModal('Sugarcube')">
+                    <h3 onclick="openOrderModal('Sugarcube')">Sugarcube</h3>
+                </div>
+                <div class="item">
+                    <img src="https://i.imgur.com/5k6tc8l.jpeg" alt="image" class="menu-image" onclick="openOrderModal('Chocolate Zebra')">
+                    <h3 onclick="openOrderModal('Chocolate Zebra')">Chocolate Zebra</h3>
+                </div>
+                <div class="item">
+                    <img src="https://i.imgur.com/BR5F3KR.jpeg" alt="image" class="menu-image" onclick="openOrderModal('Vanilla Jam')">
+                    <h3 onclick="openOrderModal('Vanilla Jam')">Vanilla Jam</h3>
+                </div>
+            </div>
+
+            <header>
+                <h1>~ Cakes ~</h1>
+            </header>
+    
+            <div class="cakes1">
+                <div class="item">
+                    <img src="https://i.imgur.com/Vr6RuCa.jpeg" alt="image" class="menu-image" onclick="openOrderModal('Unicorn Cake')">
+                    <h3 onclick="openOrderModal('Unicorn Cake')">Unicorn Cake</h3>
+                </div>
+                <div class="item">
+                    <img src="https://i.imgur.com/nYZzer2.jpeg" alt="image" class="menu-image" onclick="openOrderModal('Princess Cake')">
+                    <h3 onclick="openOrderModal('Princess Cake')">Princess Cake</h3>
+                </div>
+                <div class="item">
+                    <img src="https://i.imgur.com/tmzZdOA.jpeg" alt="image" class="menu-image" onclick="openOrderModal('Icecream Cake')">
+                    <h3 onclick="openOrderModal('Icecream Cake')">Icecream Cake</h3>
+                </div>
+            </div>
+    
+            <div class="cakes2">
+                <div class="item">
+                    <img src="https://i.imgur.com/GYcLE5e.jpeg" alt="image" class="menu-image" onclick="openOrderModal('Mudcake')">
+                    <h3 onclick="openOrderModal('Mudcake')">Mudcake</h3>
+                </div>
+                <div class="item">
+                    <img src="https://i.imgur.com/yp4lPzk.jpeg" alt="image" class="menu-image" onclick="openOrderModal('Cupcakes')">
+                    <h3 onclick="openOrderModal('Cupcakes')">Cupcakes</h3>
+                </div>
+                <div class="item">
+                    <img src="https://i.imgur.com/FiidojN.png" alt="image" class="menu-image" onclick="openOrderModal('Blueberry Pie')">
+                    <h3 onclick="openOrderModal('Blueberry Pie')">Blueberry Pie</h3>
+                </div>
+            </div>
+        </div>
+
+        <div id="orderModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeOrderModal()">&times;</span>
+                <p><Strong>This product contains:</Strong></p>
+                <p><Strong>- Eggs</Strong></p>
+                <p><Strong>- Lactose</Strong></p>
+                <p><Strong>- Gluten</Strong></p>
+                <p><Strong>Price:</Strong></p>
+                <p><Strong>$2</Strong></p>
+                <p>Would you like to order the <strong id="productName"></strong>?</p>
+                <button class="order-button" onclick="addToBasket()">Add to basket</button>
+                <button class="close-button" onclick="closeOrderModal()">Back to shop</button>
+            </div>
+        </div>
+
+        <script>
+            let selectedProduct = '';
+
+            function openOrderModal(productName) {
+                selectedProduct = productName;
+                document.getElementById("productName").innerText = productName;
+                document.getElementById("orderModal").style.display = "flex";
+            }
+
+            function closeOrderModal() {
+                document.getElementById("orderModal").style.display = "none";
+            }
+
+            // Ensure the window click only closes the modal
+            window.onclick = function(event) {
+                var orderModal = document.getElementById("orderModal");
+                
+                if (event.target == orderModal) {
+                    orderModal.style.display = "none";
+                }
+                if (event.target == orderModal) {
+                }
+            }
+        </script>
+
+        <div>
+            <button class="log-out">
+                <strong>Switch to drinks</strong>
+            </button>
+        </div>
+
+    </div>
+</body>
+</html>

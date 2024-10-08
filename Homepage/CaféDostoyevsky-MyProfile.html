@@ -1,0 +1,304 @@
+<!-- Skriven av Vidar Morin -->
+
+<title>Café Dostoyevsky - My Profile</title>
+
+<div class="container">
+    <nav class="navbar">
+        <ul>
+            <li><a href="file:///C:/Users/23mirakr/Desktop/UX-UI/Codes/Homepage/Homepage.html">Home</a></li>
+            <li><a href="file:///C:/Users/23mirakr/Desktop/UX-UI/Codes/Homepage/Shop.html">Shop</a></li>
+            <li><a href="file:///C:/Users/23mirakr/Desktop/UX-UI/Codes/Homepage/main.html">About us</a></li>
+            <li><a href="file:///C:/Users/23mirakr/Desktop/UX-UI/Codes/Homepage/Basket.html">Basket</a></li>
+            <li><a href="file:///C:/Users/23mirakr/Desktop/UX-UI/Codes/Homepage/Caf%C3%A9Dostoyevsky-MyProfile.html" class="active">My profile</a></li>
+        </ul>
+    </nav>
+    <div class="TextStyle">
+        <h1>~ My Profile ~</h1>
+      </div>
+    <div class="profile">
+        <ul>    
+            <li><img src="https://i.imgur.com/MqkfeF6.jpeg" alt="profilepicture" id="pfpic"></li>
+            <li><div class="userdetails">
+                <h3>User: The Great Emperor</h3><br>
+                <h3>Mail: senator.palpatine@coruscant.gr</h3><br>
+                <h3>Logged in: 10 / 9 - 24 BBY</h3>
+            </div></li>
+        </ul>    
+    </div>
+    <div>
+        <button class="log-out">
+            Log out
+        </button>
+    </div>
+    <div id="previousPurchases">
+        <div class="items">
+            <div class="item1">
+                <h1 id="PPTitle">~ Previous Purchases ~</h1>
+            </div>
+        </div>
+        <div class="item2">
+            <img src="https://i.imgur.com/js2eCMr.jpeg" class="pic">
+            <div class="text"><h1>Spiderman Icepop</h1>
+                <h3>Superhero ice cream <br>
+                    with the taste of <br>
+                    adventure melting <br>
+                    in your mouth</h3>
+            </div>
+            <div id="pdt1">
+                <h2>
+                    amount: 2x<br>
+                    price : 2$<br>
+                    date:   2024-09-04
+                </h2>
+            </div>
+        </div>
+        <div class="item2">
+            <img src="https://i.imgur.com/BR5F3KR.jpeg" class="pic">
+            <div class="text"><h1>Vanilla Jam Doughnut</h1>
+                <h3>
+                Find your jam with the<br>
+                Vanilla jam Doughnut!<br>
+                *Disclaimer* The product<br>
+                does not contain jam</h3>
+            </div>
+            <div id="pdt2">
+                <h2>
+                    amount: 3x<br>
+                    price:  3$<br>
+                    date:   2024-09-04
+                </h2>
+            </div>
+        </div>
+        <div class="item2">
+            <img src="https://i.imgur.com/Vr6RuCa.jpeg" class="pic">
+            <div class="text"><h1>Unicorn Cake</h1>
+                <h3>
+                Try the magical taste<br>
+                of the Unicorn cake with<br>
+                its layers of strawberry<br>
+                and other great tastes!</h3>
+            </div>
+            <div id="pdt3">
+                <h2>
+                    amount: 1x<br>
+                    price:  8$<br>
+                    date:   2024-09-04
+                </h2>
+            </div>
+        </div>
+    </div>
+    <section class="fun-graphics">
+    <img src="https://www.pngplay.com/wp-content/uploads/2/Star-Wars-Cute-Transparent-PNG.png" alt="Fun Graphic" class="cookie monster">
+    </section>
+    <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    .navbar {
+        background-color: #a8d0c3;
+        padding: 15px;
+        text-align: center;
+        border-radius: 10px;
+        margin-bottom: 30px;
+    }
+    
+    .navbar ul {
+        list-style-type: none;
+    }
+
+    
+    .navbar ul li {
+        display: inline;
+        margin: 0 15px;
+    }
+    
+    .navbar ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.2em;
+        padding: 8px 16px;
+    }
+    
+    .navbar ul li a:hover, .navbar ul li a.active {
+        background-color: #84b097;
+        border-radius: 5px;
+    }
+
+    .profile {
+        background-color: #E0D5F3;
+        border-radius: 50px;
+        padding: 22px;
+        height: auto; /* Adjust height to fit content */
+        width: 70%; /* Width remains the same */
+        margin: 30px auto; /* Center horizontally and add top margin */
+        display: flex; /* Enable flexbox */
+        flex-direction: column; /* Set direction to column */
+
+    }
+    
+    .profile ul {
+        list-style-type: none;
+        padding: 0; /* Remove default padding for the list */
+    }
+    
+
+    
+    #pfpic {
+        width: 150px;
+        height: 150px;
+        border-radius: 200px;
+        float: left;
+        
+    }
+
+    .userdetails {
+        background-color: #E0D5F3;
+        height: 150px;
+        max-height: 10%;
+        width: 50%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        float: right;
+        text-size-adjust: 5%;
+    }
+
+    .buffert {
+        background-color: #ffffff;
+        height: 40px;
+        max-width: 1000px;
+        padding-top: 0px;
+    }
+
+    #previousPurchases {
+        background-color: #F8E3FF;
+        height: auto;
+        max-width: 1000px;
+        border-radius: 50px;
+        padding-top: 25px;
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-bottom: 25px;
+        flex-direction: column;
+    }
+
+    .items {
+        display: flex;
+        width: auto;
+        height: 70px;
+        border-radius: 10px;
+        background-color: #a8d0c3;
+        flex-direction: column;
+        margin-bottom: 20px;
+        justify-content: center;
+        text-align: center;
+        color: #ffffff;
+    }
+
+    .item2 {
+        display: flex;
+        width: auto;
+        height: 140px;
+        border-radius: 10px;
+        background-color: #ffffff;
+        margin-bottom: 20px;
+        justify-items: left;
+        text-align: left;
+        color: #000000;
+    }
+
+    .PPTitle {
+        margin: auto;
+    }
+
+    .pic {
+        flex-direction: left;
+        height: 120px;
+        width: 120px;
+        border-radius: 10px;
+        margin: 10px;
+    }
+    
+    .text {
+        margin: 10px;
+    }
+
+    #pdt1 {
+        margin-top: 20px;
+        margin-left: 155px;
+        text-align: left;
+        height: 120px;
+    }
+
+    #pdt2 {
+        margin-top: 20px;
+        margin-left: 100px;
+        text-align: left;
+        height: 120px;
+    }
+
+    #pdt3 {
+        margin-top: 20px;
+        margin-left: 220px;
+        text-align: left;
+        height: 120px;
+    }
+    
+    .TextStyle {
+        color: #000000;
+        font-size: 1.5em;
+        text-align: center;
+        margin-top: 30px;
+        
+    }
+
+    /* Body and general page styles */
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #a8d0c3; /* Light green background */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    
+    /* White container in the middle of the page */
+    .container {
+        background: linear-gradient(to bottom, white, white, white, black, black);
+        min-height: 100vh; /* Ensure the body takes the full height of the viewport */
+        border-radius: 15px;
+        padding: 40px;
+        width: 80%;
+        max-width: 1000px;
+        height: 1700px;
+    }
+
+    .fun-graphics {
+        text-align: center;
+    }
+    
+    .fun-graphics img {
+        width: 500px;
+        height: auto;
+    }
+
+    .log-out {
+        background-color: #84b097;
+        color: rgb(0, 0, 0);
+        font-size: 1.2em;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        display: block;
+        margin: 30px auto; /* Center the button horizontally */
+        text-align: center;
+    }
+    
+    .log-out:hover {
+        background-color: #6b8e76; /* Slightly darker green on hover */
+    }
+    
+    </style>
+</div>
